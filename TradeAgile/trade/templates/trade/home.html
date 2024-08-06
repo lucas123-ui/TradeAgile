@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page Dev.Agile</title>
+    <!-- Carrega arquivos estáticos do Django -->
+    {% load static %}
+    <!-- Link para o arquivo CSS estático que estiliza a página -->
+    <link rel="stylesheet" type="text/css" href="{% static '/home.css' %}">
+</head>
+<body>
+    <!-- Cabeçalho da página contendo o menu de navegação -->
+    <header>
+        <nav>
+            <ul>
+                <!-- Itens do menu de navegação -->
+                <li>
+                    <!-- Botão para acessar a página de cadastro de clientes -->
+                    <button class="meu-botao">
+                        <a href="{% url 'cadastro_clientes' %}">Cadastro dos clientes</a>
+                    </button>
+                </li>
+                <li>
+                    <!-- Botão para acessar a página de demonstrativos das tabelas -->
+                    <button class="meu-botao">
+                        <a href="{% url 'demonstrativo_tabelas' %}">Demonstrativos das tabelas</a>
+                    </button>
+                </li>
+                <li>
+                    <!-- Botão para acessar a página de galeria de produtos -->
+                    <button class="meu-botao">
+                        <a href="{% url 'galeria_produtos' %}">Galeria de produtos</a>
+                    </button>
+                </li>
+                <li>
+                    <!-- Botão para acessar a página de realizar vendas -->
+                    <button class="meu-botao">
+                        <a href="{% url 'realizar_venda' %}">Realizar vendas</a>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>   
+        <!-- Título principal da página -->
+        <h1 id="tamanho">Seja Bem-vindo a Trade.Agile</h1>
+        <!-- Texto de boas-vindas -->
+        <p>Sua solução completa para desenvolvimento ágil.</p>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <!-- Texto do rodapé com o ano e nome da empresa -->
+        <p>&copy; 2023 Dev.Agile</p> 
+    </footer>
+</body>
+</html>

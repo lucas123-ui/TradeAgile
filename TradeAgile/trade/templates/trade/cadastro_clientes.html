@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Clientes</title>
+    <!-- Carrega o arquivo de estilo CSS estático -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/cadastro_clientes.css' %}">
+</head>
+<body>
+
+    <img src="{% static 'imagem/trade.agile-removebg-preview.png' %}" alt="tradeagileimgpng">
+    
+    <h1>Cadastro de Clientes</h1>
+    
+    <!-- Formulário para cadastro de clientes -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <!-- Botão para enviar o formulário -->
+        <button type="submit">Cadastrar</button>
+    </form>
+    
+    <!-- Link para voltar para a página inicial -->
+    <a href="{% url 'home' %}">Voltar para Home</a>
+</body>
+</html>

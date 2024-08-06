@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Carrega arquivos estáticos do Django -->
+    {% load static %}
+    <!-- Link para o arquivo CSS estático que estiliza a página de login -->
+    <link rel="stylesheet" type="text/css" href="{% static '/login.css' %}">
+    <title>Login</title>
+    <!-- Link para o arquivo CSS estático adicional -->
+    <link rel="stylesheet" href="{% static '/home.css' %}">
+</head>
+<body>
+    <!-- Container para o formulário de login -->
+    <div class="login-container">
+        <!-- Imagem no cabeçalho do formulário de login -->
+        <img src="{% static 'imagem/trade.agile.png' %}" alt="TradeAgileimg">
+        
+        <!-- Cabeçalho do formulário de login -->
+        <h2>Login</h2>
+        
+        <!-- Formulário para login -->
+        <form id="loginForm" action="/login" method="post">
+            <!-- Campo para nome de usuário -->
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" required>
+
+            <!-- Campo para senha -->
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Botão para enviar o formulário com link para página inicial -->
+            <button type="submit" class="meu-botao">
+                <a href="{% url 'home' %}">Entrar</a>
+            </button>
+            
+            <!-- Botão para limpar o formulário -->
+            <button type="reset" class="meu-botao">Limpar</button>
+        </form>
+        
+        <!-- Link para a página de registro de uma nova conta -->
+        <p>Não tem uma conta? <a href="{% url 'register' %}">Registrar</a>.</p>
+    </div>
+    
+    <!-- Inclui o arquivo JavaScript para funcionalidades adicionais -->
+    <script src="script.js"></script>
+</body>
+</html>

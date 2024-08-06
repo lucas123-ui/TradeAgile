@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Venda Realizada</title>
+    <!-- Carrega arquivos estáticos do Django -->
+    {% load static %}
+    <!-- Link para o arquivo CSS estático que estiliza a página de venda realizada -->
+    <link rel="stylesheet" type="text/css" href="{% static '/venda_realizada.css' %}">
+</head>
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <!-- Imagem de cabeçalho, caminho estático fornecido pelo Django -->
+        <img src="{% static 'imagem/trade.agile-removebg-preview.png' %}" alt="Trade Agile">
+        
+        <!-- Título principal da página -->
+        <h1>Sua Venda foi Realizada!</h1>
+        
+        <!-- Texto explicativo -->
+        <p>Escolha uma das opções abaixo.</p>
+    </header>
+    
+    <!-- Corpo principal da página -->
+    <main>
+        <!-- Botão para voltar à página inicial -->
+        <button> <a href="{% url 'home' %}"> Voltar para Home </a></button>
+        
+        <!-- Botão para realizar outra venda -->
+        <button> <a href="{% url 'realizar_venda' %}"> Realizar outra Venda </a></button>
+    </main>
+    
+    <br>
+    
+    <!-- Rodapé da página -->
+    <footer>
+        <br>
+        <br>
+        <br>
+        Dev.Agile@suporte.org.br
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </footer>
+</body>
+</html>

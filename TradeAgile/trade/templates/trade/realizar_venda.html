@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Realizar Venda</title>
+    <!-- Carrega arquivos estáticos do Django -->
+    {% load static %}
+    <!-- Link para o arqui
+    '   'vo CSS estático que estiliza a página de realizar venda -->
+    <link rel="stylesheet" type="text/css" href="{% static '/realizar_venda.css' %}">
+</head>
+<body>
+    <img src="{% static 'imagem/trade.agile-removebg-preview.png' %}" alt="TradeAgileimg">
+    <h1 id="titulo_realizar">Realizar Venda</h1>
+    
+    <!-- Formulário para realizar uma venda -->
+    <form method="post">
+        {% csrf_token %}
+    
+        <label for="cliente">Cliente:</label>
+        <select id="cliente" name="cliente">
+            <!-- Loop para iterar sobre a lista de clientes e criar opções de seleção -->
+            {% for cliente in clientes %}
+            <option value="{{ cliente.idcli }}">{{ cliente.nomecli }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        
+        <!-- Campo para selecionar o produto -->
+        <label for="produto">Produto:</label>
+        <select id="produto" name="produto">
+            <!-- Loop para iterar sobre a lista de produtos e criar opções de seleção -->
+            {% for produto in produtos %}
+            <option value="{{ produto.idprod }}">{{ produto.descprod }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        
+        <!-- Campo para inserir a quantidade -->
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" min="1">
+        <br>
+        
+        <!-- Botão para submeter o formulário -->
+        <button><a href="{% url 'venda_realizada' %}">Vender</a></button>
+    </form>
+    
+    <!-- Link para retornar à página inicial -->
+    <a href="{% url 'home' %}">Voltar para Home</a>
+</body>
+</html>

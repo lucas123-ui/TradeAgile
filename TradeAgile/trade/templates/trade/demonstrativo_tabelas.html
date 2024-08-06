@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demonstrativo das Tabelas</title>
+    <!-- Carrega arquivos estáticos do Django -->
+    {% load static %}
+    <!-- Link para o arquivo CSS estático para estilizar a página -->
+    <link rel="stylesheet" type="text/css" href="{% static '/demostrativo_tabelas.css' %}">
+</head>
+<body>
+
+    <h1>Demonstrativo das Tabelas</h1>
+
+    <!-- Seção para listar clientes -->
+    <h2>Clientes</h2>
+    <ul>
+        <!-- Loop para iterar sobre a lista de clientes -->
+        {% for cliente in clientes %}
+        <li>{{ cliente.nomecli }} - {{ cliente.codcli }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Seção para listar fornecedores -->
+    <h2>Fornecedores</h2>
+    <ul>
+        <!-- Loop para iterar sobre a lista de fornecedores -->
+        {% for fornecedor in fornecedores %}
+        <li>{{ fornecedor.nomeforn }} - {{ fornecedor.codiforn }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Seção para listar produtos -->
+    <h2>Produtos</h2>
+    <ul>
+        <!-- Loop para iterar sobre a lista de produtos -->
+        {% for produto in produtos %}
+        <li>{{ produto.descprod }} - {{ produto.codiprod }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Seção para listar vendas -->
+    <h2>Vendas</h2>
+    <ul>
+        <!-- Loop para iterar sobre a lista de vendas -->
+        {% for venda in vendas %}
+        <li>{{ venda.codivend }} - {{ venda.valorvend }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Link para retornar à página inicial -->
+    <a href="{% url 'home' %}">Voltar para Home</a>
+</body>
+</html>
+

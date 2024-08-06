@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Galeria de Produtos</title>
+    <!-- Carrega arquivos estáticos do Django -->
+    {% load static %}
+    <!-- Link para o arquivo CSS estático que estiliza a página -->
+    <link rel="stylesheet" type="text/css" href="{% static '/galeria_produtos.css' %}">
+</head>
+<body>
+
+    <h1>Galeria de Produtos</h1>
+    
+    <!-- Div para o carrossel de imagens -->
+    <div class="carousel">
+        <div class="carousel-images">
+            <!-- Imagens no carrossel, cada uma com um caminho estático e texto alternativo -->
+            <img src="{% static 'imagem/Cadeira_Gamer_GAMING - Copia.jpg' %}" alt="Image 1">
+            <img src="{% static 'imagem/console_playstation_5_slim.jpg' %}" alt="Image 2">
+            <img src="{% static 'imagem/galaxys24_ultra.jpg' %}" alt="Image 3">
+            <img src="{% static 'imagem/headset_gamer_redragon_zeus.jpg' %}" alt="Image 4">
+            <img src="{% static 'imagem/HeadsetGamerHavitH2002D.jpg' %}" alt="Image 5">
+            <img src="{% static 'imagem/PC_gamer_brx_AMD_RYZEN5.jpg' %}" alt="Image 6">
+            <img src="{% static 'imagem/placa_de_video_RTX_3060_ventus.jpg' %}" alt="Image 7">
+            <img src="{% static 'imagem/teclado_mecanico_gamer_gaminf_tg600.jpg' %}" alt="Image 8">
+        </div>
+        <!-- Botões para navegação no carrossel -->
+        <button class="prev">&lt;</button>
+        <button class="next">&gt;</button>
+    </div>
+    
+    <!-- Lista de produtos com informações -->
+    <ul>
+        <!-- Loop para iterar sobre a lista de produtos e exibir detalhes -->
+        {% for produto in produtos %}
+        <li>
+            <h2>{{ produto.descprod }}</h2>
+            <p>Código: {{ produto.codiprod }}</p>
+            <p>Valor: R$ {{ produto.valorprod }}</p>
+            <p>Situação: {{ produto.situprod }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <!-- Link para retornar à página inicial -->
+    <a href="{% url 'home' %}">Voltar para Home</a>
+
+    <!-- Inclui o arquivo JavaScript estático para funcionalidade do carrossel -->
+    <script src="{% static '/carrosel.js' %}"></script>
+</body>
+</html>

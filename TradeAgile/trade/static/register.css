@@ -1,0 +1,73 @@
+body {
+    background-color: #1E5E8B;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.container {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+
+h2 {
+    color: #1E5E8B;
+    margin-bottom: 20px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+form input, form button {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+.btn-primary {
+    background-color: #1E5E8B;
+    border-color: #1E5E8B;
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #296ac3;
+    border-color: #296ac3;
+}
+
+/* Estiliza o link de login */
+a {
+    color: #1E5E8B;
+}
+
+a:hover {
+    color: #296ac3;
+}
+
+p {
+    color: #000000;
+}
+
+img {
+    width: 290px;
+}
